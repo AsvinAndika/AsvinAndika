@@ -1,0 +1,12 @@
+{
+  _id: null,
+  totalAccounts: {
+    $sum: 1
+  },
+  totalLimit: {
+    $sum: "$limit"
+  },
+  uniqueProducts: {
+    $addToSet: "$products"
+  }
+}
