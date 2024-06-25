@@ -1,0 +1,24 @@
+{
+  _id: null,
+  total_customers: {
+    $sum: 1
+  },
+  average_accounts: {
+    $avg: {
+      $size: "$accounts"
+    }
+  },
+  customers: {
+    $push: {
+      id: "$_id",
+      name: "$name",
+      email: "$email",
+      birthdate: "$birthdate",
+      active:
+        "$tier_and_details.d43e647fd3764999a1c334598d0fed74.active",
+      tier: "$tier_and_details.d43e647fd3764999a1c334598d0fed74.tier",
+      benefits:
+        "$tier_and_details.d43e647fd3764999a1c334598d0fed74.benefits"
+    }
+  }
+}
