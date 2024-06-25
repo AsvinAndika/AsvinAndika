@@ -1,0 +1,11 @@
+{
+  account_id: {
+    $exists: true
+  },
+  bucket_start_date: {
+    $exists: true
+  },
+  bucket_end_date: {
+    $exists: true
+  }
+}
