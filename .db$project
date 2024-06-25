@@ -1,0 +1,14 @@
+{
+  _id: 0,
+  totalAccounts: 1,
+  totalLimit: 1,
+  uniqueProducts: {
+    $reduce: {
+      input: "$uniqueProducts",
+      initialValue: [],
+      in: {
+        $setUnion: ["$$value", "$$this"]
+      }
+    }
+  }
+}
